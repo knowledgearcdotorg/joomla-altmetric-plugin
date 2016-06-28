@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3" type="plugin" group="content" method="upgrade">
+    <name>plg_content_altmetric</name>
+    <author>KnowledgeArc</author>
+    <creationDate>2016-06-24</creationDate>
+    <copyright>Copyright (C) 2016 KnowledgeArc Ltd. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>development@knowledgearc.com</authorEmail>
+    <authorUrl>www.knowledgearc.org</authorUrl>
+    <version>1.0.0-dev</version>
+    <description>PLG_CONTENT_ALTMETRIC_XML_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="altmetric">altmetric.php</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_altmetric.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_altmetric.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="type"
+                    type="list"
+                    label="PLG_CONTENT_ALTMETRIC_FIELD_TYPE_LABEL"
+                    description="PLG_CONTENT_ALTMETRIC_FIELD_TYPE_DESC">
+                    <option value="doi">DOI</option>
+                    <option value="arxiv-id">arXiv ID</option>
+                    <option value="pmid">PubMed ID</option>
+                    <option value="handle">Handle</option>
+                    <option value="isbn">ISBN</option>
+                    <option value="uri">URI</option>
+                    <option value="urn">URN</option>
+                    <option value="nct-id">NCT ID</option>
+                    <option value="altmetric-id">Altmetric ID</option>
+                </field>
+                <field
+                    name="badge-type"
+                    type="list"
+                    label="PLG_CONTENT_ALTMETRIC_FIELD_BADGE_TYPE_LABEL"
+                    description="PLG_CONTENT_ALTMETRIC_FIELD_BADGE_TYPE_DESC"
+                    default="donut">
+                    <option value="4">Small badge</option>
+                    <option value="2">Medium badge</option>
+                    <option value="1">Large badge</option>
+                    <option value="donut">Small donut</option>
+                    <option value="medium-donut">Medium donut</option>
+                    <option value="large-donut">Large donut</option>
+                    <option value="bar">Small bar</option>
+                    <option value="medium-bar">Medium bar</option>
+                    <option value="large-bar">Large bar</option>
+                </field>
+                <field
+                    name="condensed"
+                    type="radio"
+                    label="PLG_CONTENT_ALTMETRIC_FIELD_CONDENSED_LABEL"
+                    description="PLG_CONTENT_ALTMETRIC_FIELD_CONDENSED_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="popover"
+                    type="list"
+                    label="PLG_CONTENT_ALTMETRIC_FIELD_POPOVER_LABEL"
+                    description="PLG_CONTENT_ALTMETRIC_FIELD_POPOVER_DESC"
+                    default="">
+                    <option value="">None</option>
+                    <option value="top">Top</option>
+                    <option value="right">Right</option>
+                    <option value="bottom">Bottom</option>
+                    <option value="left">Left</option>
+                </field>
+                <field
+                    name="details"
+                    type="list"
+                    label="PLG_CONTENT_ALTMETRIC_FIELD_DETAILS_LABEL"
+                    description="PLG_CONTENT_ALTMETRIC_FIELD_DETAILS_DESC"
+                    default="">
+                    <option value="">None</option>
+                    <option value="right">Right</option>
+                </field>
+                <field
+                    name="hide-no-mentions"
+                    type="radio"
+                    label="PLG_CONTENT_ALTMETRIC_FIELD_HIDE_NO_MENTIONS_LABEL"
+                    description="PLG_CONTENT_ALTMETRIC_FIELD_HIDE_NO_MENTIONS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="hide-less-than"
+                    type="text"
+                    label="PLG_CONTENT_ALTMETRIC_FIELD_HIDE_LESS_THAN_LABEL"
+                    description="PLG_CONTENT_ALTMETRIC_FIELD_HIDE_LESS_THAN_DESC"/>
+            </fieldset>
+        </fields>
+    </config>
+
+
+    <!--updateservers>
+        <server type="extension" priority="1"><![CDATA[http://knowledgearc.org/index.php?option=com_ars&view=update&task=stream&format=xml&id=13&dummy=extension.xml]]></server>
+    </updateservers-->
+</extension>
