@@ -70,6 +70,15 @@ class PlgContentAltmetric extends JPlugin
 
             foreach ($pluginParams as $key=>$value) {
                 if ($key == 'type') {
+                    switch ($value) {
+                        case 'handle':
+                            JFactory::getDocument()->setMetaData(
+                                "DC.identifier",
+                                "http://hdl.handle.net/".$id);
+
+                            break;
+                    }
+
                     if ($id) {
                         $displayData->set("data-".$value, $id);
                     } else {
