@@ -69,25 +69,39 @@ class PlgContentAltmetric extends JPlugin
             $displayData = new Registry;
 
             foreach ($pluginParams as $key=>$value) {
-                if ($key == 'type') {
-                    switch ($value) {
-                        case 'handle':
-                            JFactory::getDocument()->setMetaData(
-                                "DC.identifier",
-                                "http://hdl.handle.net/".$id);
+                switch ($key) {
+                    case 'type':
+                        switch ($value) {
+                            case 'handle':
+                                JFactory::getDocument()->setMetaData(
+                                    "DC.identifier",
+                                    "http://hdl.handle.net/".$id);
 
-                            break;
-                    }
+                                break;
+                        }
 
-                    if ($id) {
-                        $displayData->set("data-".$value, $id);
-                    } else {
-                        throw new Exception("No id could be found for Altmetric");
-                    }
-                } else {
-                    if ($value) {
-                        $displayData->set("data-".$key, $value);
-                    }
+                        if ($id) {
+                            $displayData->set("data-".$value, $id);
+                        } else {
+                            throw new Exception("No id could be found for Altmetric");
+                        }
+
+                        break;
+
+                    case 'hide-no-mentions':
+                    case 'condensed':
+                        if ((int)$value == 1) {
+                            $displayData->set("data-".$key, "true");
+                        }
+                        
+                        break;
+
+                    default:
+                        if ($value) {
+                            $displayData->set("data-".$key, $value);
+                        }
+
+                        break;
                 }
             }
 
