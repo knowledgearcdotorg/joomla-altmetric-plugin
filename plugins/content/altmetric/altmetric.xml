@@ -108,6 +108,6 @@
         <server
             type="extension"
             priority="1"
-            name="Joomla! Altmetric Plugin Update Channel">http://update.knowledgearc.org/joomla/extensions/plg_content_altmetric/updates.xml</server>
+            name="Joomla! Altmetric Plugin Update Channel">http://update.knowledgearc.org/joomla/extensions/plg_content_altmetric.xml</server>
     </updateservers>
 </extension>
