@@ -65,7 +65,7 @@
                     <option value="0">JNO</option>
                 </field>
                 <field
-                    name="popover"
+                    name="badge-popover"
                     type="list"
                     label="PLG_CONTENT_ALTMETRIC_FIELD_POPOVER_LABEL"
                     description="PLG_CONTENT_ALTMETRIC_FIELD_POPOVER_DESC"
@@ -77,7 +77,7 @@
                     <option value="left">Left</option>
                 </field>
                 <field
-                    name="details"
+                    name="badge-details"
                     type="list"
                     label="PLG_CONTENT_ALTMETRIC_FIELD_DETAILS_LABEL"
                     description="PLG_CONTENT_ALTMETRIC_FIELD_DETAILS_DESC"
