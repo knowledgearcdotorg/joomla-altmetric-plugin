@@ -3,7 +3,7 @@
     <update>
         <name>Joomla! Altmetric Plugin</name>
         <description>Integrate the Altmetric badge into your Joomla! web site</description>
-        <element>plg_content_altmetric</element>
+        <element>altmetric</element>
         <type>plugin</type>
         <folder>content</folder>
         <version>1.0.0</version>
